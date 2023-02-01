@@ -31,6 +31,16 @@ namespace WindowsFormsApp4
                 s[i] = listBox1.Items[i].ToString();
             string tb = textBox1.Text;
             int l = 0, r = listBox1.Items.Count, c;
+            while(l < r-1)
+            {
+                c = (l + r) / 2;
+                if ((char)tb[0] < (char)s[c][0])
+                    r = c;
+                else
+                    l = c;
+            }
+            if (s[l]==tb)
+                listBox1.SelectedIndex = l;
 
         }
     }
